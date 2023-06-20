@@ -8,7 +8,7 @@
 :root {
     --white: #F3F7F6;
     --darkPurple: #312B3B;
-    --lightPurple: #453C53
+    --lightPurple: #453C53;
     --lightBlue: #0E6881;
     --notBlack: #0D090A;
 }
@@ -16,9 +16,9 @@
 /* ----- MOBILE ----- */
 
 body {
-    max-width: 1440px;
+    max-width: 1920px;
     margin: 0 auto;
-    background: red;
+    background: var(--notBlack);
     font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -37,13 +37,14 @@ body {
     position: fixed;
     right: 0;
     z-index: 1;
+    display: flex;
 }
 
 @media (max-width: 440px) {
     #navHeader {
       display: block;
     }
-    #navHeader span{
+    #navHeader li{
         position: inherit;
         right: 1rem;
     }
@@ -52,9 +53,12 @@ body {
     }
   }
 
- #navHeader span {
+  .navContact {
     margin-left: 1rem;
-    font-size: clamp(1rem, 0.8642rem + 0.7759vw, 1.5625rem);
+}
+
+ #navHeader li {
+    font-size: clamp(1rem, 0.904rem + 0.5488vw, 1.5625rem);
     font-weight: 900;
     color: var(--notBlack);
     letter-spacing: 5px;
@@ -66,20 +70,103 @@ body {
 /* ----- FOOTER ----- */
 
 #footer {
-    padding-bottom: 1rem;
-}
-
-footer p {
-    font-size: 0.7rem;
+    width: 100%;
+    padding: 2rem 0;
+    background: var(--notBlack);
+    /* --- font --- */
+    font-size: clamp(0.6rem, 0.904rem + 0.5488vw, 1rem);    
     font-weight: 400;
     color: var(--white);
     letter-spacing: 0.2rem;
-    margin-top: 5rem;
     text-align: center;
 }
 
 /* ----- MAIN ----- */
 
 #page-container {
-    background: darkcyan;
+  
+}
+
+/* ----- Hero - sec-1 ----- */
+
+.hero-sec1 {
+    background: var(--darkPurple);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heroTitle {
+    padding: 30px 40px;
+    min-width: 30%;
+    border-radius: 15px;
+    background: var(--notBlack);
+    color:var(--white);
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 180px;
+}
+
+.heroTitle p {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.earthVector {
+    max-width: 50%;
+}
+
+/* ----- Information - sec-2 ----- */
+
+.information-sec2 {
+    background: var(--lightPurple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.informationTitle {
+    padding: 30px 40px;
+    min-width: 30%;
+    border-radius: 15px;
+    color:var(--white);
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.informationTitle p {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.alienPlanetVector {
+    max-width: 50%;
+    margin-bottom: 60px;
+}
+
+.placeholderImage {
+    width: 80%;
+    height: 200px;
+    background: var(--notBlack);
+    color: var(--white);
+    display: grid;
+    place-content: center;
+    margin-top: 10px;
+}
+
+.informationParagraph {
+    padding: 30px 40px;
+    min-width: 30%;
+    border-radius: 15px;
+    color:var(--white);
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 60px;
 }
