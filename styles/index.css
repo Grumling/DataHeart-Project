@@ -5,5 +5,81 @@
 
 /* font-family: 'Space Grotesk', sans-serif; */
 
-/* ---------------------------------------------- */
+:root {
+    --white: #F3F7F6;
+    --darkPurple: #312B3B;
+    --lightPurple: #453C53
+    --lightBlue: #0E6881;
+    --notBlack: #0D090A;
+}
 
+/* ----- MOBILE ----- */
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: red;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* This applies from 0px to 600px */
+@media (max-width: 800px) {
+  body {
+    background: green;
+  }
+}
+
+/* ----- Header (Mobile & Desktop) ----- */
+
+#navHeader {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+}
+
+@media (max-width: 440px) {
+    #navHeader {
+      display: block;
+    }
+    #navHeader span{
+        position: inherit;
+        right: 1rem;
+    }
+    .navContact {
+        margin-top: 2rem;
+    }
+  }
+
+ #navHeader span {
+    margin-left: 1rem;
+    font-size: clamp(1rem, 0.8642rem + 0.7759vw, 1.5625rem);
+    font-weight: 900;
+    color: var(--notBlack);
+    letter-spacing: 5px;
+    background: var(--white);
+    padding: 0.03rem 1rem;
+    border-radius: 0.6rem;
+ }
+
+/* ----- FOOTER ----- */
+
+#footer {
+    padding-bottom: 1rem;
+}
+
+footer p {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.2rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+/* ----- MAIN ----- */
+
+#page-container {
+    background: darkcyan;
+}
