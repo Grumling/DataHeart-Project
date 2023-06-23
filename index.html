@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
+    <script defer src="./script/formValidate"></script>
     <title>DataHeart | RogueLite Adventure Game</title>
 </head>
 <body>
@@ -90,17 +91,23 @@
 
             <img class="contactImg" src="https://picsum.photos/350/400?random=9" alt="">
 
-            <form id="anchorMenuContact" class="contactForm" action="" method="post">
-
-                <input type="text" name="name" id="name" placeholder="Name" required>
-
-                <input type="email" name="email" id="email" placeholder="Email" required>
-
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
-
-                <input type="submit" value="Send">
-
-            </form>
+            <div class="formContainer">
+                <form id="form" action="">
+                    <div class="input-control">
+                        <input id="name" name="name" type="text" placeholder="Navn">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <input id="email" name="email" type="text" placeholder="Email">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <textarea id="textarea" name="textarea" cols="30" rows="10" placeholder="Din Besked"></textarea >
+                        <div class="error"></div>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
 
             <img class="ringPlanetVector" src="./img/ringPlanet.svg" alt="A Stylish yellow and green planet, with a ring around it">
 
