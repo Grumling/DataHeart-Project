@@ -3,7 +3,7 @@ const uName = document.querySelector('#name');
 const email = document.querySelector('#email');
 const textarea = document.querySelector('#textarea');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('change', (e) => {
     e.preventDefault(); // forhindre at formen sender data til serveren
 
     validateInputs();

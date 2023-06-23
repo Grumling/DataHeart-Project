@@ -22,13 +22,6 @@ body {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-/* This applies from 0px to 600px */
-@media (max-width: 800px) {
-  body {
-    background: green;
-  }
-}
-
 /* ----- Header (Mobile & Desktop) ----- */
 
 #navHeader {
@@ -83,19 +76,33 @@ body {
 
 /* ----- MAIN ----- */
 
-/* #page-container {
-  
-} */
+.backToTop {
+  position: fixed;
+  padding: 10px 10px;
+  background: #09c372;
+}
 
 /* ----- Hero - sec-1 ----- */
 
 .hero-sec1 {
-  background: var(--darkPurple);
+  background: rgb(24, 14, 71);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 14, 71, 1) 0%,
+    rgba(135, 13, 86, 1) 25%,
+    rgba(239, 5, 171, 1) 51%,
+    rgba(175, 11, 85, 1) 77%,
+    rgba(15, 7, 39, 1) 100%
+  );
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.heroImg {
+  box-shadow: rgba(239, 5, 171, 1) 0px 0px 5px 0.1rem;
 }
 
 .heroTitle {
@@ -105,17 +112,44 @@ body {
   background: var(--notBlack);
   color: var(--white);
   text-align: center;
-  margin-top: 60px;
-  margin-bottom: 180px;
+  margin-top: -70px;
+  margin-bottom: 60px;
+  letter-spacing: 10px;
+  z-index: 1;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .heroTitle p {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 0.7973rem + 1.1585vw, 2.1875rem);
 }
 
 .earthVector {
   max-width: 50%;
+}
+
+@media (min-width: 800px) {
+  .earthVector {
+    max-width: 20%;
+    position: absolute;
+    left: 20px;
+    top: 77px;
+  }
+
+  .heroTitle {
+    position: absolute;
+  }
+
+  .heroImg {
+    margin-top: 2%;
+    border-radius: 15px;
+  }
 }
 
 /* ----- Information - sec-2 ----- */
@@ -136,11 +170,12 @@ body {
   text-align: center;
   margin-top: 60px;
   margin-bottom: 60px;
+  z-index: 1;
 }
 
 .informationTitle p {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 0.7973rem + 1.1585vw, 2.1875rem);
 }
 
 .alienPlanetVector {
@@ -148,15 +183,18 @@ body {
   margin-bottom: 60px;
 }
 
-.placeholderImage {
-  width: 80%;
-  height: 200px;
-  background: var(--notBlack);
-  color: var(--white);
+.informationImg {
+  min-width: 80%;
   display: grid;
-  place-content: center;
+  place-items: center;
+}
+
+.infoImg {
+  max-width: 80%;
+  color: var(--white);
   margin-top: 10px;
   border-radius: 15px;
+  box-shadow: rgba(239, 5, 171, 1) 0px 0px 5px 0.1rem;
 }
 
 .informationParagraph {
@@ -170,6 +208,31 @@ body {
   line-height: 1.5;
   margin-top: 20px;
   margin-bottom: 60px;
+}
+
+@media (min-width: 800px) {
+  .alienPlanetVector {
+    position: absolute;
+    max-width: 15%;
+    right: 1%;
+    margin-top: -35%;
+  }
+
+  .informationImg {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .infoImg {
+    max-width: 50%;
+    height: 350px;
+    flex: 1;
+    margin: 10px;
+  }
+
+  .informationParagraph {
+    text-align: center;
+  }
 }
 
 /* ----- GALLERY - sec-3 ----- */
@@ -190,11 +253,12 @@ body {
   text-align: center;
   margin-top: 60px;
   margin-bottom: 30px;
+  letter-spacing: 10px;
 }
 
 .galleryTitle p {
+  font-size: clamp(1rem, 0.7973rem + 1.1585vw, 2.1875rem);
   font-weight: 900;
-  font-size: 1.5rem;
 }
 
 .redPlanetVector {
@@ -211,23 +275,24 @@ body {
 .galleryContainer {
   margin-bottom: 60px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
-  gap: 30px 30px;
-  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px 20px;
   grid-template-areas:
     'Pic-1 pic-2'
     'pic-3 pic-4'
     'pic-5 pic-6'
-    'pic-7 pic-8';
+    'pic-7 pic-8'
+    'pic-9 .';
 }
 
 .galleryContainer img {
   border-radius: 15px;
+  box-shadow: rgba(239, 5, 171, 1) 0px 0px 5px 0.1rem;
 }
 
-.Pic-1 {
+.pic-1 {
   grid-area: Pic-1;
 }
 
@@ -259,6 +324,81 @@ body {
   grid-area: pic-8;
 }
 
+.pic-9 {
+  grid-area: pic-9;
+}
+
+@media (min-width: 800px) {
+  .pic-1,
+  .pic-2,
+  .pic-3,
+  .pic-4,
+  .pic-5,
+  .pic-6,
+  .pic-7,
+  .pic-8,
+  .pic-9 {
+    max-width: 100%;
+  }
+
+  .galleryContainer {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.8fr 0.8fr 0.8fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px 30px;
+  }
+
+  .Pic-1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .pic-2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .pic-35 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .pic-3 {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  .pic-4 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .pic-5 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .pic-6 {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .pic-7 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .pic-8 {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .pic-9 {
+    grid-area: 3 / 3 / 4 / 4;
+  }
+
+  .galleryContainer img {
+    width: 413px;
+  }
+
+  .redPlanetVector {
+    position: absolute;
+    right: 0;
+    margin-top: 10%;
+    margin-right: 5%;
+  }
+
+  .tealPurplePlanetVector {
+    position: absolute;
+    left: 0;
+    margin-top: 48%;
+    margin-left: 1%;
+  }
+}
+
 /* ----- CONTACT - sec-4 ----- */
 
 .contact-sec4 {
@@ -275,13 +415,14 @@ body {
   border-radius: 15px;
   color: var(--white);
   text-align: center;
+  letter-spacing: 10px;
   margin-top: 60px;
   margin-bottom: 30px;
 }
 
 .contactTitle p {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 0.7973rem + 1.1585vw, 2.1875rem);
 }
 
 .ringPlanetVector {
@@ -290,8 +431,21 @@ body {
 }
 
 .contactImg {
-  max-width: 80%;
+  max-width: 50%;
   margin-bottom: 30px;
+  box-shadow: rgba(239, 5, 171, 1) 0px 0px 5px 0.1rem;
+}
+
+.contactImgText {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.contactWrapper {
+  margin: auto 0;
+  display: grid;
+  place-items: center;
 }
 
 .formContainer {
@@ -335,7 +489,7 @@ textarea {
   background: transparent;
   border: 0;
   border-radius: 15px;
-  border: 1px solid #eee;
+  border: 1px solid var(--white);
   display: block;
   font-size: 12px;
   padding: 8px;
@@ -347,7 +501,7 @@ textarea {
   border: 2px solid var(--white);
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--white);
   display: block;
   font-size: 12px;
   padding: 8px;
@@ -357,10 +511,21 @@ textarea {
 
 .input-control input:focus {
   outline: 0;
+  background: var(--lightBlueHover);
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  transition: 250ms ease-in-out;
+}
+
+::placeholder {
+  color: var(--white);
+  opacity: 1;
 }
 
 .input-control textarea:focus {
   outline: 0;
+  background: var(--lightBlueHover);
+  transition: 250ms ease-in-out;
 }
 
 .input-control.success input {
@@ -376,4 +541,59 @@ input-control.error input {
   font-size: 12px;
   height: 16px;
   margin-bottom: 5px;
+}
+
+/* Chrome autfill remove */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--white);
+}
+
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--white);
+}
+
+@media (min-width: 800px) {
+  .contact-sec4 {
+    /* flex-direction: row-reverse; */
+  }
+
+  .ringPlanetVector {
+    display: 1;
+  }
+
+  .contactWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    margin-bottom: 50px;
+  }
+
+  .formContainer {
+    margin: 0 100px 0 0;
+    min-width: 60%;
+    padding: 0 0;
+  }
+
+  .contactImg {
+    max-width: 15%;
+  }
+
+  .contactImgText {
+    writing-mode: vertical-lr;
+    letter-spacing: 15px;
+  }
+
+  .ringPlanetVector {
+    max-width: 20%;
+    margin-bottom: 170px;
+  }
 }
