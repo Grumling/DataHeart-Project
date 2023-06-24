@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
-    <script defer src="./script/formValidate"></script>
+    <script defer src="./script/formValidate.js"></script>
+    <script defer src="./script/toTopButton.js"></script>
     <title>DataHeart | RogueLite Adventure Game</title>
 </head>
 <body>
     
     <header id="navHeader">
+        <a href="#anchorTop"><h1 class="logoText">DataHeart</h1></a>
         <li>
-            BrainMonkey Team
+            <a href="brainMonkeyTeamDumpSite.html" target="_blank"><p>BrainMonkey Team</p></a>
         </li>
         <li class="navContact">
             <a href="#anchorMenuContact"><p>Contact</p></a>
@@ -19,7 +21,7 @@
     </header>
     
     <main id="page-container">
-        
+        <div id="anchorTop"></div>
         <section class="hero-sec1">
 
             <img class="heroImg" src="./img/hero.png" alt="">
@@ -121,7 +123,7 @@
 
         </section>
         
-        <div id="backToTop">UP</div>
+        <a href="#anchorTop"><img id="backToTop" src="./img/toTop.png" alt=""></a>
 
     </main>
 

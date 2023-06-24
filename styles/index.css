@@ -33,7 +33,17 @@ body {
   display: flex;
 }
 
-@media (max-width: 440px) {
+#navHeader p:hover {
+  color: rgba(239, 5, 171, 1);
+  transition: 250ms ease-in-out;
+}
+
+#navHeader li:hover {
+  transition: 250ms ease-in-out;
+  border-radius: 0;
+}
+
+@media (max-width: 800px) {
   #navHeader {
     display: block;
   }
@@ -43,6 +53,9 @@ body {
   }
   .navContact {
     margin-top: 2rem;
+  }
+  .logoText {
+    display: none;
   }
 }
 
@@ -60,6 +73,16 @@ body {
   border-radius: 0.6rem;
 }
 
+.logoText {
+  position: fixed;
+  left: 2%;
+  top: 0;
+  font-size: 3rem;
+  color: var(--white);
+  letter-spacing: 15px;
+  text-shadow: rgba(239, 5, 171, 1) 0px 5px 0.1px;
+}
+
 /* ----- FOOTER ----- */
 
 #footer {
@@ -72,6 +95,19 @@ body {
   color: var(--white);
   letter-spacing: 0.2rem;
   text-align: center;
+}
+
+#backToTop {
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  max-width: 5%;
+  filter: grayscale(1);
+  transition: 250ms ease-in-out;
+}
+
+#backToTop:hover {
+  filter: grayscale(0);
 }
 
 /* ----- MAIN ----- */
@@ -116,7 +152,7 @@ body {
   margin-bottom: 60px;
   letter-spacing: 10px;
   z-index: 1;
-  /* From https://css.glass */
+  /* glassmorph */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -328,6 +364,8 @@ body {
   grid-area: pic-9;
 }
 
+/* MODAL END */
+
 @media (min-width: 800px) {
   .pic-1,
   .pic-2,
@@ -509,7 +547,8 @@ textarea {
   width: 100%;
 }
 
-.input-control input:focus {
+.input-control input:focus,
+input:hover {
   outline: 0;
   background: var(--lightBlueHover);
   border-top-right-radius: 15px;
@@ -522,7 +561,8 @@ textarea {
   opacity: 1;
 }
 
-.input-control textarea:focus {
+.input-control textarea:focus,
+textarea:hover {
   outline: 0;
   background: var(--lightBlueHover);
   transition: 250ms ease-in-out;
@@ -562,9 +602,6 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 800px) {
-  .contact-sec4 {
-    /* flex-direction: row-reverse; */
-  }
 
   .ringPlanetVector {
     display: 1;
