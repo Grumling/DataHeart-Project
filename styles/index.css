@@ -110,6 +110,63 @@ body {
   filter: grayscale(0);
 }
 
+/* ----- INTERSECTION OBSERVER STYLE ----- */
+
+.initialHide {
+  opacity: 0;
+}
+
+.scrolledLeft {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: scroll-in-left 1.5s forwards;
+}
+
+@keyframes scroll-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.scrolledRight {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: scroll-in-right 1.5s forwards;
+}
+
+@keyframes scroll-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.scrolledFadeIn {
+  opacity: 0;
+  animation: fade-in 1.5s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* ----- MAIN ----- */
 
 .backToTop {
@@ -491,6 +548,8 @@ body {
   margin: auto;
   max-width: 80%;
   padding: 30px 40px;
+  border: solid 2px var(--white);
+  border-radius: 15px;
 }
 
 input,
@@ -602,7 +661,6 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 800px) {
-
   .ringPlanetVector {
     display: 1;
   }
@@ -617,7 +675,6 @@ input:-webkit-autofill:focus {
   .formContainer {
     margin: 0 100px 0 0;
     min-width: 60%;
-    padding: 0 0;
   }
 
   .contactImg {
