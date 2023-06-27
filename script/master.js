@@ -14,3 +14,7 @@ app.init = () => {
 };
 
 app.init();
+
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
