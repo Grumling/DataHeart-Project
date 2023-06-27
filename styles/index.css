@@ -249,6 +249,7 @@ body {
 
 .information-sec2 {
   background: var(--lightPurple);
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -479,6 +480,11 @@ body {
     width: 413px;
   }
 
+  .galleryTitle p {
+    border-left: solid 1px var(--white);
+    border-bottom: solid 1px var(--white);
+  }
+
   .redPlanetVector {
     position: absolute;
     right: 0;
@@ -523,6 +529,7 @@ body {
 .ringPlanetVector {
   max-width: 50%;
   margin-bottom: 60px;
+  margin-top: 10px;
 }
 
 .contactImg {
@@ -550,6 +557,7 @@ body {
   padding: 30px 40px;
   border: solid 2px var(--white);
   border-radius: 15px;
+  background: var(--darkPurple);
 }
 
 input,
@@ -675,6 +683,11 @@ input:-webkit-autofill:focus {
   .formContainer {
     margin: 0 100px 0 0;
     min-width: 60%;
+  }
+
+  .contactTitle p {
+    border-left: solid 1px var(--white);
+    border-bottom: solid 1px var(--white);
   }
 
   .contactImg {
