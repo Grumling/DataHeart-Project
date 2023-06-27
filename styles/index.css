@@ -20,68 +20,125 @@ body {
   margin: 0 auto;
   background: var(--notBlack);
   font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 /* ----- Header (Mobile & Desktop) ----- */
 
-#navHeader {
-  margin-top: 1rem;
-  margin-right: 1rem;
+header {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  min-width: 100vw;
+  z-index: 2;
   position: fixed;
-  right: 0;
-  z-index: 1;
+  border-bottom: solid 1px var(--white);
+}
+
+#navBar {
+  transition: top 0.3s;
+}
+
+nav {
+  margin-left: auto;
+}
+
+ul {
   display: flex;
 }
 
-#navHeader p:hover {
-  color: rgba(239, 5, 171, 1);
-  transition: 250ms ease-in-out;
+li {
+  margin-right: 20px;
+  text-transform: uppercase;
+  letter-spacing: 9px;
+  padding: 10px 10px;
+  color: var(--white);
 }
 
-#navHeader li:hover {
-  transition: 250ms ease-in-out;
+.c-button {
+  color: #000;
+  font-weight: 400;
+  font-size: 1em;
+  text-decoration: none;
+  padding: .7em 1.8em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c-button--gooey {
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid var(--white);
   border-radius: 0;
+  padding: 10px 10px;
+  position: relative;
+  transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs {
+  height: 100%;
+  filter: url(#goo);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -3px;
+  right: -1px;
+  z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+  background-color: var(--lightBlueHover);
+  width: 34%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(1.4) translateY(125%) translateZ(0);
+  transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+  left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+  left: 30%;
+  transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+  left: 66%;
+  transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+  color: #fff;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+  transform: scale(1.4) translateY(0) translateZ(0);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-right: 20px;
+  color: var(--white);
+}
+
+.logo p {
+  letter-spacing: 15px;
 }
 
 @media (max-width: 800px) {
-  #navHeader {
-    display: block;
-  }
-  #navHeader li {
-    position: inherit;
-    right: 1rem;
-  }
-  .navContact {
-    margin-top: 2rem;
-  }
-  .logoText {
+  header {
     display: none;
   }
-}
-
-.navContact {
-  margin-left: 1rem;
-}
-
-#navHeader li {
-  font-size: clamp(1rem, 0.904rem + 0.5488vw, 1.5625rem);
-  font-weight: 900;
-  color: var(--notBlack);
-  letter-spacing: 5px;
-  background: var(--white);
-  padding: 0.03rem 1rem;
-  border-radius: 0.6rem;
-}
-
-.logoText {
-  position: fixed;
-  left: 2%;
-  top: 0;
-  font-size: 3rem;
-  color: var(--white);
-  letter-spacing: 15px;
-  text-shadow: rgba(239, 5, 171, 1) 0px 5px 0.1px;
-}
+} 
 
 /* ----- FOOTER ----- */
 
@@ -175,6 +232,10 @@ body {
   background: #09c372;
 }
 
+.page-container {
+  /* width: 0; */
+}
+
 /* ----- Hero - sec-1 ----- */
 
 .hero-sec1 {
@@ -205,7 +266,6 @@ body {
   background: var(--notBlack);
   color: var(--white);
   text-align: center;
-  margin-top: -70px;
   margin-bottom: 60px;
   letter-spacing: 10px;
   z-index: 1;
@@ -233,6 +293,7 @@ body {
     position: absolute;
     left: 20px;
     top: 77px;
+    z-index: 3;
   }
 
   .heroTitle {
@@ -240,8 +301,11 @@ body {
   }
 
   .heroImg {
-    margin-top: 2%;
-    border-radius: 15px;
+    margin-top: 0;
+    min-width: 100%;
+    height: 100%;
+    z-index: 2;
+    box-shadow: none;
   }
 }
 
@@ -301,7 +365,7 @@ body {
   text-align: left;
   line-height: 1.5;
   margin-top: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 170px;
 }
 
 @media (min-width: 800px) {
@@ -341,7 +405,7 @@ body {
     '. . .'
     '. . .';
   width: 85%;
-  margin-bottom: 60px;
+  margin-bottom: 170px;
 }
 
 .item {
@@ -453,8 +517,8 @@ body {
 
 .ringPlanetVector {
   max-width: 50%;
-  margin-bottom: 60px;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 170px;
 }
 
 .contactImg {

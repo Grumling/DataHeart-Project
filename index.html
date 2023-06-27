@@ -11,15 +11,44 @@
 </head>
 <body>
     
-    <header id="navHeader">
-        <a href="#anchorTop"><h1 class="logoText">DataHeart</h1></a>
-        <li>
-            <a href="brainMonkeyTeamDumpSite.html" target="_blank"><p>BrainMonkey Team</p></a>
-        </li>
-        <li class="navContact">
-            <a href="#anchorMenuContact"><p>Contact</p></a>
-        </li>
+    <header id="navBar">
+        <span class="logo"><p><a href="#anchorTop">DataHeart</a></p></span>
+        <nav>
+            <ul>
+              <li>
+                  <a href="./brainMonkeyTeamDumpSite.html" class="c-button c-button--gooey">
+                    BrainMonkey Team
+                    <div class="c-button__blobs">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </a>
+              </li>
+              <li>
+                  <a href="#anchorMenuAbout" class="c-button c-button--gooey">
+                    About
+                    <div class="c-button__blobs">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </a>
+              </li>
+              <li>
+                  <a href="#anchorMenuContact" class="c-button c-button--gooey">
+                    Contact
+                    <div class="c-button__blobs">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </a>
+              </li>
+            </ul>
+          </nav>
     </header>
+
     
     <main id="page-container">
         <div id="anchorTop"></div>
@@ -38,7 +67,7 @@
 
         <section class="information-sec2">
            
-            <article class="informationTitle fadeIn initialHide">
+            <article id="anchorMenuAbout" class="informationTitle fadeIn initialHide">
                 <p>Introducing</p>
                 <br> <p>DataHeart a new thrilling indie RogueLite Adventure Game</p>
             </article>
