@@ -1,20 +1,17 @@
-import formValidate from './formValidate.js';
+import validateForm from './formValidate.js';
 import toTopButton from './toTopButton.js';
 import observerAnimation from './observerAnimation.js';
-import fancyBox from './fancyBox.js';
 //import NavCloseOnScroll from './NavCloseOnScroll.js';
 
 const app = {};
 
 app.init = () => {
   
-  formValidate.init();
+  validateForm.init();
   
   toTopButton.init();
   
   observerAnimation.init();
-  
-  fancyBox.init();
 
   //NavCloseOnScroll.init();
 
@@ -22,7 +19,7 @@ app.init = () => {
 
 let navbar = document.querySelector('#navigationBar'); // Get The NavBar
 
-let lastScrollTop; // This Varibale will store the top position
+let lastScrollTop; //* This Varibale will store the top position
 
 window.addEventListener('scroll', function () {
   //on every scroll this funtion will be called
@@ -38,7 +35,9 @@ window.addEventListener('scroll', function () {
     navbar.style.top = '0';
   }
   
-  lastScrollTop = scrollTop; //New Position Stored
+  lastScrollTop = scrollTop; //* New Position Stored
 });
+
+Fancybox.bind(); //* Activere fancybox
 
 app.init();

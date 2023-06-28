@@ -10,6 +10,7 @@
   --lightPurple: #453c53;
   --lightBlue: #0e6881;
   --lightBlueHover: #127e9c;
+  --LighestBlue: #2ab3d9;
   --notBlack: #0d090a;
 }
 
@@ -530,124 +531,6 @@ li {
   margin-bottom: 170px;
 }
 
-.contactImg {
-  max-width: 50%;
-  margin-bottom: 30px;
-  box-shadow: rgba(239, 5, 171, 1) 0px 0px 5px 0.1rem;
-}
-
-.contactImgText {
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--white);
-}
-
-.contactWrapper {
-  margin: auto 0;
-  display: grid;
-  place-items: center;
-}
-
-.formContainer {
-  margin-bottom: 60px;
-  margin: auto;
-  max-width: 80%;
-  padding: 30px 40px;
-  border: solid 2px var(--white);
-  border-radius: 15px;
-  background: var(--darkPurple);
-}
-
-input,
-textarea,
-#form button {
-  font-family: inherit;
-  font-size: inherit;
-  color: var(--white);
-}
-
-#form button {
-  background: var(--lightBlue);
-  border: 0;
-  border-radius: 15px;
-  width: 50%;
-  margin-left: 50%;
-  margin-bottom: 50px;
-  cursor: pointer;
-}
-
-#form button:hover {
-  transition: 250ms ease-in-out;
-  background: var(--lightBlueHover);
-}
-
-.input-control {
-  display: flex;
-  flex-direction: column;
-}
-
-textarea {
-  resize: none;
-  border: 2px solid var(--white);
-  background: transparent;
-  border: 0;
-  border-radius: 15px;
-  border: 1px solid var(--white);
-  display: block;
-  font-size: 12px;
-  padding: 8px;
-  margin: 10px 0;
-  width: 100%;
-}
-
-.input-control input {
-  border: 2px solid var(--white);
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--white);
-  display: block;
-  font-size: 12px;
-  padding: 8px;
-  margin: 10px 0;
-  width: 100%;
-}
-
-.input-control input:focus,
-input:hover {
-  outline: 0;
-  background: var(--lightBlueHover);
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  transition: 250ms ease-in-out;
-}
-
-::placeholder {
-  color: var(--white);
-  opacity: 1;
-}
-
-.input-control textarea:focus,
-textarea:hover {
-  outline: 0;
-  background: var(--lightBlueHover);
-  transition: 250ms ease-in-out;
-}
-
-.input-control.success input {
-  border-color: #09c372;
-}
-
-input-control.error input {
-  border-color: #ff3860;
-}
-
-.input-control .error {
-  color: #ff3860;
-  font-size: 12px;
-  height: 16px;
-  margin-bottom: 5px;
-}
-
 /* Chrome autfill remove */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -666,39 +549,94 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--white);
 }
 
+.formContainer {
+  width: 100%;
+}
+
+form {
+  max-width: 550px;
+  width: 90%;
+  background: white;
+  margin: 14vh auto 0 auto;
+  padding: 40px;
+  border-radius: 3px;
+}
+
+form h1 {
+  margin: 0;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+input[type='text']:focus,
+textarea:focus {
+  border-bottom: 1px solid rgb(255, 0, 106);
+}
+
+textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: rgb(255, 0, 106);
+}
+
+.center {
+  text-align: center;
+}
+
+input[type='submit'] {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 200px;
+  background: linear-gradient(to right, var(--lightBlue), var(--LighestBlue));
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 300ms ease-in-out;
+}
+
+input[type='submit']:hover {
+  transform: scale(1.2);
+}
+
+.error {
+  color: red;
+}
+
+.error-border {
+  border-bottom: 1px solid red;
+}
+
+.succes {
+  color: green;
+}
+
 @media (min-width: 800px) {
-  .ringPlanetVector {
-    display: 1;
-  }
-
-  .contactWrapper {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row-reverse;
-    margin-bottom: 50px;
-  }
-
-  .formContainer {
-    margin: 0 100px 0 0;
-    min-width: 60%;
-  }
-
   .contactTitle p {
     border-left: solid 1px var(--white);
     border-bottom: solid 1px var(--white);
   }
 
-  .contactImg {
-    max-width: 15%;
-  }
-
-  .contactImgText {
-    writing-mode: vertical-lr;
-    letter-spacing: 15px;
-  }
-
   .ringPlanetVector {
+    display: 1;
     max-width: 20%;
     margin-bottom: 170px;
   }
+
 }

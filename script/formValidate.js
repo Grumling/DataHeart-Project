@@ -1,66 +1,58 @@
-const formValidate = {};
+const validateForm = {};
 
-formValidate.init = () => {
-  const form = document.querySelector('form');
-  const uName = document.querySelector('#name');
+validateForm.init = () => {
+  //* Get data
+  const nameInput = document.querySelector('#name');
   const email = document.querySelector('#email');
-  const textarea = document.querySelector('#textarea');
+  const message = document.querySelector('#message');
+  const success = document.querySelector('#succes');
+  const errorNodes = document.querySelectorAll('.error');
 
-  form.addEventListener('change', (e) => {
-    e.preventDefault(); // forhindre at formen sender data til serveren
+  //* Validate data
+  function FormValidation() {
+    clearMessages();
+    let errorFlag = false;
 
-    validateInputs();
-  });
-
-  const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-    errorDisplay.innerText = message;
-    inputControl.classList.add('error');
-    inputControl.classList.remove('success');
-  };
-
-  const setSuccess = (element) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-    errorDisplay.innerText = '';
-    inputControl.classList.add('success');
-    inputControl.classList.remove('error');
-  };
-
-  const isValidEmail = (email) => {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  };
-
-  const validateInputs = () => {
-    const nameValue = uName.value.trim();
-    const emailValue = email.value.trim();
-    const textareaValue = textarea.value.trim();
-
-    if (nameValue === '') {
-      setError(uName, 'Navn må ikke være tomt');
-    } else {
-      setSuccess(uName);
+    if (nameInput.value.length < 1) {
+      errorNodes[0].innerText = 'Name cannot be blank';
+      nameInput.classList.add('error-border');
+      errorFlag = true;
     }
 
-    if (emailValue === '') {
-      setError(email, 'Email må ikke være tomt');
-    } else if (!isValidEmail(emailValue)) {
-      setError(email, 'Email er ikke gyldig');
-    } else {
-      setSuccess(email);
+    if (!emailIsValid(email.value)) {
+      errorNodes[1].innerText = 'Invalid email adress';
+      email.classList.add('error-border');
+      errorFlag = true;
     }
 
-    if (textareaValue === '') {
-      setError(textarea, 'Besked må ikke være tomt');
-    } else {
-      setSuccess(textarea);
+    if (message.value.length < 1) {
+      errorNodes[2].innerText = 'Please write a message';
+      message.classList.add('error-border');
+      errorFlag = true;
     }
-  };
+
+    if (!errorFlag) {
+      success.innerText = 'Message sent successfully';
+    }
+  }
+
+  //* Clear error / success messages
+  function clearMessages() {
+    for (let i = 0; i < errorNodes.length; i++) {
+      errorNodes[i].innerText = '';
+    }
+    success.innerText = '';
+    nameInput.classList.remove('error-border');
+    email.classList.remove('error-border');
+    message.classList.remove('error-border');
+  }
+
+  //* Check if email is valid
+  function emailIsValid(email) {
+    let pattern = /\S+@\S+\.\S+/;
+    return pattern.test(email);
+  }
+
 };
 
-export default formValidate;
+export default validateForm;
