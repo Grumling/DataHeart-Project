@@ -1,10 +1,11 @@
-const navHide = {};
+const NavCloseOnScroll = {};
 
-navHide.init = () => {
+NavCloseOnScroll.init = () => {
+  let navbar = document.querySelector('#navigationBar'); // Get The NavBar
+
   let lastScrollTop; // This Varibale will store the top position
 
-  navbar = document.getElementById('navBar'); // Get The NavBar
-
+  if(navbar)  {
   window.addEventListener('scroll', function () {
     //on every scroll this funtion will be called
 
@@ -21,6 +22,7 @@ navHide.init = () => {
 
     lastScrollTop = scrollTop; //New Position Stored
   });
+  }
 };
 
-export default navHide;
+export default NavCloseOnScroll;

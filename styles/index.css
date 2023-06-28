@@ -37,7 +37,7 @@ header {
   border-bottom: solid 1px var(--white);
 }
 
-#navBar {
+#navigationBar {
   transition: top 0.5s;
 }
 
@@ -171,7 +171,7 @@ li {
 }
 
 #myBtn:hover {
-  filter: grayscale(0);;
+  filter: grayscale(0);
 }
 
 /* ----- INTERSECTION OBSERVER STYLE ----- */
