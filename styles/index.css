@@ -127,7 +127,7 @@ li {
 .logo {
   font-weight: bold;
   font-size: 2rem;
-  margin-right: 20px;
+  margin-left: 50px;
   color: var(--white);
 }
 
@@ -135,9 +135,106 @@ li {
   letter-spacing: 15px;
 }
 
+/* Mobile Menu activate */
 @media (max-width: 800px) {
-  header {
+  #navigationBar {
     display: none;
+  }
+
+  #menu {
+    z-index: 2;
+  }
+
+  #menu-bar {
+    width: 45px;
+    height: 40px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+  }
+
+  .bar {
+    height: 5px;
+    width: 100%;
+    background-color: var(--LighestBlue);
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+
+  #bar1 {
+    transform: translateY(-4px);
+  }
+
+  #bar3 {
+    transform: translateY(4px);
+  }
+
+  .nav {
+    transition: 0.3s ease;
+    display: none;
+  }
+
+  .nav ul {
+    padding: 0 22px;
+  }
+
+  .nav li {
+    list-style: none;
+    padding: 12px 0;
+  }
+
+  .nav li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 15px ;
+  }
+
+  .nav li a:hover {
+    font-weight: bold;
+  }
+
+  .menu-bg,
+  #menu {
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  .menu-bg {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 30px 0 20px 70px;
+    background: radial-gradient(circle, var(--lightBlue), var(--lightBlueHover));
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+
+  .change {
+    display: block;
+  }
+
+  .change .bar {
+    background-color: var(--LighestBlue);
+  }
+
+  .change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+
+  .change #bar2 {
+    opacity: 0;
+  }
+
+  .change #bar3 {
+    transform: translateY(-6px) rotateZ(45deg);
+  }
+
+  .change-bg {
+    width: 520px;
+    height: 460px;
+    transform: translate(-60%, -30%);
   }
 }
 
@@ -173,6 +270,14 @@ li {
 
 #myBtn:hover {
   filter: grayscale(0);
+}
+
+@media (max-width: 800px) {
+  #myBtn {
+    width: 65px;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 /* ----- INTERSECTION OBSERVER STYLE ----- */
@@ -542,11 +647,11 @@ input:-webkit-autofill:active {
 }
 
 input:-webkit-autofill {
-  -webkit-text-fill-color: var(--white);
+  -webkit-text-fill-color: var(--notBlack);
 }
 
 input:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--white);
+  -webkit-text-fill-color: var(--notBlack);
 }
 
 .formContainer {
@@ -638,5 +743,4 @@ input[type='submit']:hover {
     max-width: 20%;
     margin-bottom: 170px;
   }
-
 }

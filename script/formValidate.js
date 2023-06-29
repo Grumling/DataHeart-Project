@@ -8,6 +8,7 @@ validateForm.init = () => {
   const success = document.querySelector('#succes');
   const errorNodes = document.querySelectorAll('.error');
 
+  // todo FormValidation bliver ikke kaldt? Hvofor?
   //* Validate data
   function FormValidation() {
     clearMessages();

@@ -1,6 +1,7 @@
 import validateForm from './formValidate.js';
 import toTopButton from './toTopButton.js';
 import observerAnimation from './observerAnimation.js';
+import mobileNav from './mobileNav.js';
 //import NavCloseOnScroll from './NavCloseOnScroll.js';
 
 const app = {};
@@ -15,7 +16,11 @@ app.init = () => {
 
   //NavCloseOnScroll.init();
 
+  mobileNav.init();
+
 };
+
+// todo Skal flytttes til sin egen fil, og derefter importeres her. Får hjælp
 
 let navbar = document.querySelector('#navigationBar'); // Get The NavBar
 
