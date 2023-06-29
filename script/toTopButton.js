@@ -9,6 +9,11 @@ toTopButton.init = () => {
     scrollFunction();
   };
 
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  
   function scrollFunction() {
     if (
       document.body.scrollTop > 20 ||
@@ -19,13 +24,10 @@ toTopButton.init = () => {
       mybutton.style.display = 'none';
     }
   }
+  if (mybutton) {
+    mybutton.addEventListener('click', topFunction);
+  }
 
-  // When the user clicks on the button, scroll to the top of the document
-  // Er ødelagt Prøv at fix ellers brug anchor i html
-/*   function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  } */
 };
 
 export default toTopButton;

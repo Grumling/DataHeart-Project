@@ -47,28 +47,14 @@
               </li>
             </ul>
           </nav>
-        </header>
         <!-- Mobile Nav -->
-        <div id="menu">
-          <div id="menu-bar" onclick="menuOnClick()">
-            <div id="bar3" class="bar"></div>
-            <div id="bar1" class="bar"></div>
-            <div id="bar2" class="bar"></div>
-          </div>
-          <nav class="nav" id="nav">
-              <li><a href="./brainMonkeyTeamDumpSite.html">BrainMonkey</a></li>
-              <li><a href="#anchorMenuAbout">About</a></li>
-              <li><a href="#anchorMenuContact">Contact</a></li>
-            </ul>
-          </nav> 
-        </div>
         
-        <div class="menu-bg" id="menu-bg"></div>
-
+        <!-- Mobile Nav End -->
+        </header>
     
     <main id="page-container">
         <div id="anchorTop"></div>
-        <section class="hero-sec1 fadeIn initialHide">
+        <section class="hero-sec1 fadeIn">
 
             <img class="heroImg" src="./img/hero.png" alt="">
             
@@ -183,7 +169,7 @@
             </article>
 
                 <div class="formContainer">
-                    <form onsubmit="event.preventDefault(); validateForm()">
+                    <form id="formContact">
                         <h1>Contact Us</h1>
     
                         <label for="name">Name:</label>
@@ -194,8 +180,8 @@
                         <input type="text" id="email" placeholder="Your email">
                         <small class="error"></small>
     
-                        <label for="Message">Message:</label>
-                        <textarea id="Message" placeholder="Your Message" rows="6"></textarea>
+                        <label for="message">Message:</label>
+                        <textarea id="message" placeholder="Your Message" rows="6"></textarea>
                         <small class="error"></small>
     
                         <div class="center">
@@ -210,7 +196,7 @@
 
         </section>
         
-        <button onclick="topFunction()" id="myBtn""><a href="#anchorTop"><img id="backToTop" src="./img/toTop.png" alt=""></a></button>
+        <button id="myBtn""><a><img id="backToTop" src="./img/toTop.png" alt=""></a></button>
 
     </main>
 

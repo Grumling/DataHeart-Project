@@ -1,16 +1,16 @@
-const validateForm = {};
+const form = {};
 
-validateForm.init = () => {
-  //* Get data
+//* Get data
+form.init = () => {
   const nameInput = document.querySelector('#name');
   const email = document.querySelector('#email');
   const message = document.querySelector('#message');
-  const success = document.querySelector('#succes');
+  const success = document.querySelector('#success');
   const errorNodes = document.querySelectorAll('.error');
+  const form = document.querySelector('#formContact');
 
-  // todo FormValidation bliver ikke kaldt? Hvofor?
   //* Validate data
-  function FormValidation() {
+  function formValidation() {
     clearMessages();
     let errorFlag = false;
 
@@ -54,6 +54,10 @@ validateForm.init = () => {
     return pattern.test(email);
   }
 
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formValidation();
+  });
 };
 
-export default validateForm;
+export default form;
