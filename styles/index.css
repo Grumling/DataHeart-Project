@@ -27,7 +27,6 @@ body {
 /* ----- Header (Mobile & Desktop) ----- */
 
 header {
-  
   padding: 0 20px;
   background: rgba(42, 179, 217, 0.4);
   border-bottom: solid 1px var(--white);
@@ -77,51 +76,54 @@ ul li:hover {
 /* ---- Mobile ---- */
 
 #hamburger-icon {
-    margin: auto 0;
-    display: none;
-    cursor: pointer;
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
 }
 
 #hamburger-icon div {
-    width: 35px;
-    height: 3px;
-    background: var(--white);
-    margin: 6px 0;
-    transition: 0.4s;
+  width: 35px;
+  height: 3px;
+  background: var(--white);
+  margin: 6px 0;
+  transition: 0.4s;
 }
 
 .open .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-    transform: rotate(-45deg) translate(-6px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
 }
 
 .open .bar2 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .open .bar3 {
-    -webkit-transform: rotate(45deg) translate(-6px, -8px);
-    transform: rotate(45deg) translate(-6px, -8px);
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
 }
 
 .open .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    height: calc(100vh - 50px);
-    width: 100%;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+  background: rgba(33, 33, 33, 0.939);
 }
 
+
+
 .mobile-menu li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* ---- Responsive ---- */
@@ -245,6 +247,7 @@ ul li:hover {
 
 .page-container {
   /* width: 0; */
+  overflow: hidden;
 }
 
 /* ----- Hero - sec-1 ----- */
@@ -543,8 +546,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
 
 input:-webkit-autofill {
@@ -563,6 +564,12 @@ form {
   max-width: 550px;
   width: 90%;
   background: white;
+  background: rgba(42, 179, 217, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   margin: 14vh auto 0 auto;
   padding: 40px;
   border-radius: 3px;
@@ -590,7 +597,7 @@ textarea {
 
 input[type='text']:focus,
 textarea:focus {
-  border-bottom: 1px solid rgb(255, 0, 106);
+  border-bottom: 1px solid rgb(255, 0, 0);
 }
 
 textarea::-webkit-scrollbar {
@@ -598,7 +605,7 @@ textarea::-webkit-scrollbar {
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background: rgb(255, 0, 106);
+  background: var(--darkPurple);
 }
 
 .center {
@@ -614,7 +621,8 @@ input[type='submit'] {
   font-size: 17px;
   cursor: pointer;
   border-radius: 3px;
-  transition: 300ms ease-in-out;
+  border: none;
+  transition: 250ms ease-in-out;
 }
 
 input[type='submit']:hover {
@@ -622,15 +630,16 @@ input[type='submit']:hover {
 }
 
 .error {
-  color: red;
+  color: #f01111;
+
 }
 
 .error-border {
   border-bottom: 1px solid red;
 }
 
-.succes {
-  color: green;
+#success {
+  color: #32cd32;
 }
 
 @media (min-width: 800px) {

@@ -15,19 +15,19 @@ form.init = () => {
     let errorFlag = false;
 
     if (nameInput.value.length < 1) {
-      errorNodes[0].innerText = 'Name cannot be blank';
+      errorNodes[0].innerText = '*Name cannot be blank';
       nameInput.classList.add('error-border');
       errorFlag = true;
     }
 
     if (!emailIsValid(email.value)) {
-      errorNodes[1].innerText = 'Invalid email adress';
+      errorNodes[1].innerText = '*Invalid email adress';
       email.classList.add('error-border');
       errorFlag = true;
     }
 
     if (message.value.length < 1) {
-      errorNodes[2].innerText = 'Please write a message';
+      errorNodes[2].innerText = '*Please write a message';
       message.classList.add('error-border');
       errorFlag = true;
     }
