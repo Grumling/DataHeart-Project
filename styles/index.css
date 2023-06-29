@@ -344,7 +344,7 @@ ul li:hover {
   border-radius: 15px;
   color: var(--white);
   text-align: center;
-  margin-top: 60px;
+  margin-top: 160px;
   margin-bottom: 10px;
   z-index: 1;
 }
@@ -384,7 +384,7 @@ ul li:hover {
   text-align: left;
   line-height: 1.5;
   margin-top: 20px;
-  margin-bottom: 170px;
+  margin-bottom: 200px;
 }
 
 @media (min-width: 800px) {
@@ -424,7 +424,7 @@ ul li:hover {
     '. . .'
     '. . .';
   width: 85%;
-  margin-bottom: 170px;
+  margin-bottom: 200px;
 }
 
 .item {
@@ -460,7 +460,7 @@ ul li:hover {
   border-radius: 15px;
   color: var(--white);
   text-align: center;
-  margin-top: 60px;
+  margin-top: 160px;
   margin-bottom: 30px;
   letter-spacing: 10px;
 }
@@ -525,7 +525,7 @@ ul li:hover {
   color: var(--white);
   text-align: center;
   letter-spacing: 10px;
-  margin-top: 60px;
+  margin-top: 160px;
   
 }
 
@@ -578,6 +578,7 @@ form {
 form h1 {
   margin: 0;
   text-align: center;
+  color: var(--white);
 }
 
 label {
