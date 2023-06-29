@@ -15,6 +15,7 @@ app.init = () => {
   NavCloseOnScroll.init();
 };
 
+
 Fancybox.bind(); //! Activere fancybox
 
 app.init();

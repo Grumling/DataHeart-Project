@@ -13,7 +13,7 @@ toTopButton.init = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
-  
+ 
   function scrollFunction() {
     if (
       document.body.scrollTop > 20 ||

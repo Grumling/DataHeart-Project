@@ -1,7 +1,7 @@
 const NavCloseOnScroll = {};
 
 NavCloseOnScroll.init = () => {
-  let navbar = document.querySelector('#navigationBar'); // Get The NavBar
+  let navbar = document.querySelector('#navHideOnScroll'); // Get The NavBar
 
   let lastScrollTop; // This Varibale will store the top position
 

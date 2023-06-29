@@ -5,52 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
     <script src="./script/master.js" type="module"></script>
+    <script src="./script/toggleMobileMenu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     <title>DataHeart | RogueLite Adventure Game</title>
 </head>
 <body>
     
-    <header id="navigationBar">
-        <span class="logo"><p><a href="#anchorTop">DataHeart</a></p></span>
+    <header id="navHideOnScroll">
+        <div id="brand"><a href="#anchorTop">DataHeart</a></div>
         <nav>
             <ul>
-              <li>
-                  <a href="./brainMonkeyTeamDumpSite.html" class="c-button c-button--gooey">
-                    BrainMonkey Team
-                    <div class="c-button__blobs">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                  </a>
-              </li>
-              <li>
-                  <a href="#anchorMenuAbout" class="c-button c-button--gooey">
-                    About
-                    <div class="c-button__blobs">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                  </a>
-              </li>
-              <li>
-                  <a href="#anchorMenuContact" class="c-button c-button--gooey">
-                    Contact
-                    <div class="c-button__blobs">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                  </a>
-              </li>
+                <li><a href="./brainMonkeyTeamDumpSite.html" target="_blank">BrainMonkey Team</a></li>
+                <li><a href="#anchorMenuAbout">About</a></li>
+                <li><a href="#anchorMenuContact">Contact</a></li>
             </ul>
-          </nav>
-        <!-- Mobile Nav -->
-        
-        <!-- Mobile Nav End -->
-        </header>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="./brainMonkeyTeamDumpSite.html" target="_blank">BrainMonkey Team</a></li>
+                <li><a href="#anchorMenuAbout">About</a></li>
+                <li><a href="#anchorMenuContact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
     
     <main id="page-container">
         <div id="anchorTop"></div>

@@ -27,138 +27,112 @@ body {
 /* ----- Header (Mobile & Desktop) ----- */
 
 header {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 10px;
+  
+  padding: 0 20px;
+  background: rgba(42, 179, 217, 0.4);
+  border-bottom: solid 1px var(--white);
+  height: 50px;
   display: flex;
-  align-items: center;
-  min-width: 100vw;
+  justify-content: space-between;
   z-index: 2;
   position: fixed;
-  border-bottom: solid 1px var(--white);
+  width: 100%;
+  left: 0;
+  transition: 0.5s;
 }
 
-/* Hide Desktop menu in mobile */
-#navigationBar {
-  display: none;
+#brand {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: var(--white);
+  font-size: clamp(0.8rem, 1.2rem + 0.5488vw, 2rem);
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+ul a {
+  color: var(--white);
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* ---- Mobile ---- */
+
+#hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger-icon div {
+    width: 35px;
+    height: 3px;
+    background: var(--white);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+    opacity: 0;
+}
+
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
 }
 
 .mobile-menu {
-  min-width: 100%;
-  height: 60px;
-  z-index: 998;
-  position: fixed;
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: calc(100vh - 50px);
+    width: 100%;
 }
 
+.mobile-menu li {
+    margin-bottom: 10px;
+}
 
+/* ---- Responsive ---- */
 
-@media (min-width: 800px) {
-  
-  .mobil-menu {
+@media only screen and (max-width: 800px) {
+  header nav {
     display: none;
   }
 
-  #navigationBar {
-    transition: top 0.5s;
-    top: 0;
-    left: 0;
-  }
-
-  nav {
-    margin-left: auto;
-  }
-
-  ul {
-    display: flex;
-  }
-
-  li {
-    margin-right: 20px;
-    text-transform: uppercase;
-    letter-spacing: 9px;
-    padding: 10px 10px;
-    color: var(--white);
-  }
-
-  .c-button {
-    color: #000;
-    font-weight: 400;
-    font-size: 1em;
-    text-decoration: none;
-    padding: 0.7em 1.8em;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .c-button--gooey {
-    color: var(--white);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 2px solid var(--white);
-    border-radius: 0;
-    padding: 10px 10px;
-    position: relative;
-    transition: all 700ms ease;
-  }
-
-  .c-button--gooey .c-button__blobs {
-    height: 100%;
-    filter: url(#goo);
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: -3px;
-    right: -1px;
-    z-index: -1;
-  }
-
-  .c-button--gooey .c-button__blobs div {
-    background-color: var(--lightBlueHover);
-    width: 34%;
-    height: 100%;
-    border-radius: 100%;
-    position: absolute;
-    transform: scale(1.4) translateY(125%) translateZ(0);
-    transition: all 700ms ease;
-  }
-
-  .c-button--gooey .c-button__blobs div:nth-child(1) {
-    left: -5%;
-  }
-
-  .c-button--gooey .c-button__blobs div:nth-child(2) {
-    left: 30%;
-    transition-delay: 60ms;
-  }
-
-  .c-button--gooey .c-button__blobs div:nth-child(3) {
-    left: 66%;
-    transition-delay: 25ms;
-  }
-
-  .c-button--gooey:hover {
-    color: #fff;
-  }
-
-  .c-button--gooey:hover .c-button__blobs div {
-    transform: scale(1.4) translateY(0) translateZ(0);
-  }
-
-  .logo {
-    font-weight: bold;
-    font-size: 2rem;
-    margin-left: 50px;
-    color: var(--white);
-  }
-
-  .logo p {
-    letter-spacing: 15px;
-  }
-
-  #menu {
-    display: none;
+  #hamburger-icon {
+    display: block;
   }
 }
 
@@ -304,6 +278,8 @@ header {
   color: var(--white);
   text-align: center;
   margin-bottom: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
   letter-spacing: 10px;
   z-index: 1;
   /* glassmorph */
@@ -342,7 +318,7 @@ header {
   .heroImg {
     margin-top: 0;
     min-width: 100%;
-    height: 100%;
+    height: auto;
     z-index: 2;
     box-shadow: none;
   }
@@ -378,6 +354,7 @@ header {
 .alienPlanetVector {
   max-width: 50%;
   margin-bottom: 60px;
+  z-index: 1;
 }
 
 .informationImg {
